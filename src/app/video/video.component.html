@@ -1,0 +1,140 @@
+<div class="body" *ngIf="video">
+    <div class="background-image">
+        <img [src]="video.backdrop_path | image" [alt]="video.name">
+    </div>
+
+    <div class="rating-sidebar">
+        <div class="rating">{{ video.vote_average }}</div>
+        <div class="rating-text">Rate it</div>
+        <div class="sidebar-button">
+            <div class="sidebar-icon"><i class='bx bxs-share bx-flip-horizontal'></i></div> Share this
+        </div>
+        <div class="sidebar-button">
+            <div class="sidebar-icon"><i class='bx bxs-star' style='color:#ffd700'></i></div> Favorite
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="movie-poster">
+            <img [src]="video.poster_path | image" [alt]="video.name">
+        </div>
+
+        <div class="movie-info">
+            <h1 class="movie-title">{{ video.title }}</h1>
+
+            <div class="movie-meta">
+                <span class="hd-badge">HD</span>
+                <span class="meta-item">
+                    <span class="trailer-icon"><i class='bx bxs-video'></i></span>
+                    <span class="trailer-title">Trailer</span>
+                </span>
+                <span class="imdb">IMDB: {{ video.vote_average }}</span>
+                <span class="duration">{{ video.runtime }} min</span>
+            </div>
+
+            <div class="play-options">
+                <div class="play-option" (click)="playTrailer()">
+                    <span class="play-icon"></span> Server UpCloud
+                </div>
+                <div class="play-option" (click)="playTrailer()">
+                    <span class="play-icon"></span> Server MegaCloud
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="overview-section">
+                    <div class="section-title">Overview:</div>
+                    <div class="overview">
+                        {{ video.overview }}
+                    </div>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-column">
+                        <div class="info-item">
+                            <div class="info-label">Released:</div>
+                            <div class="info-value">{{ video.release_date }}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Genre:</div>
+                            <div class="info-value">
+                                <span *ngFor="let genre of video.genres; let last = last">
+                                    {{ genre.name }}{{ last ? '' : ', ' }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Casts:</div>
+                            <div class="info-value">
+                                <span *ngFor="let cast of casts | slice:0:5; let last = last">
+                                    {{ cast?.name }}{{ last ? '' : ', ' }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-column">
+                        <div class="info-item">
+                            <div class="info-label">Duration:</div>
+                            <div class="info-value">{{ video.runtime }} min</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Country:</div>
+                            <div class="info-value">United States of America</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Production:</div>
+                            <div class="info-value">{{ productionCompanies }}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="watch-options">
+                    <div class="watch-button" (click)="playTrailer()">Watch {{ video.title }} Online Free</div>
+                    <div class="watch-button" (click)="playTrailer()">{{ video.title }} Online Free</div>
+                    <div class="watch-button" (click)="playTrailer()">Where to watch {{ video.title }}</div>
+                    <div class="watch-button" (click)="playTrailer()">{{ video.title }} movie free online</div>
+                    <div class="watch-button" (click)="playTrailer()">{{ video.title }} free online</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cast Section -->
+<div class="cast-related">
+    <div class="cast-section" *ngIf="casts && casts.length">
+        <h2 class="section-title">Top Billed Cast</h2>
+        <div class="cast-wrapper">
+            <div class="cast-container" #castContainer>
+                <div class="cast-member" *ngFor="let cast of casts">
+                    <img [src]="cast.profile_path | image" [alt]="cast.name">
+                    <div class="name">
+                        <div class="cast-name">{{ cast.name }}</div>
+                        <div class="character-name">{{ cast.character }}</div>
+                    </div>
+                </div>
+            </div>
+            <button class="scroll-btn right" id="scrollBtn" (click)='scrollLeft()'>
+                <i class='bx bxs-chevron-right-circle'></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Recommendations Section -->
+    <div class="related-section" *ngIf="recommendations && recommendations.length">
+        <h2 class="section-title">You may also like</h2>
+        <div class="related-container">
+            <div class="movies">
+                <div class="movie-card" *ngFor="let recommendation of recommendations">
+                    <img [src]="recommendation.poster_path | image" [alt]="recommendation.name">
+                    <div class="movie-information">
+                        <div class="movie-year-type">{{ recommendation.release_date }} | {{ media_type }}</div>
+                        <div class="movie-titles">{{ recommendation.title }}</div>
+                    </div>
+                    <a [routerLink]="['/info', media_type, recommendation.id]" class="watch-buttons">▶ Watch now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

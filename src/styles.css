@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --main-color: #ff2c1f;
+    --text-color: #020307;
+    --bg-color: #fff;
+    --font-color: #ffffffc0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'Bebas_Neue';
+    src: url('../public/Bebas_Neue/BebasNeue-Regular.ttf') format('truetype');
+}
+
+* body {
+
+    font-family: 'Bebas_Neue', 'Poppins', sans-serif;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #181717;
+    border-radius: 1rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #555456;
+    border-radius: 1rem;
+}

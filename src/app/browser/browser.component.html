@@ -1,0 +1,29 @@
+@defer{
+<section>
+    <div class="filter">
+        <app-filter (Genres)="genres($event)" (Language)="language($event)"></app-filter>
+    </div>
+    <div class="movies">
+        <div class="all-movies">
+            @for(media of allMedia; track media.id; ) {
+            <div class="movie-card" (click)="getMovie(media.id)">
+                <div class="image">
+                    <img [src]="media.poster_path | image" [alt]="media.name || media.title" alt="" />
+                </div>
+                <div class="movie-details">
+                    <p>{{ media.name || media.title | title}}</p>
+                    <span>{{ media.release_date || media.first_air_date }}</span>
+                </div>
+            </div>
+            } @empty{
+            <p>*Something wrong</p>
+            }
+        </div>
+        <div class="load-more" (click)="loadMore()">
+            <p>load more</p>
+        </div>
+    </div>
+</section>
+} @loading(minimum 250ms){
+<app-loader></app-loader>
+}

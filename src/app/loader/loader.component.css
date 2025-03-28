@@ -1,0 +1,226 @@
+.skeleton-banner {
+  position: relative;
+  width: 100%;
+  height: 90.3vh;
+  background: #141414;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-iframe {
+  width: 100%;
+  height: 90.3vh;
+  background: #141414;
+  position: absolute;
+}
+
+.skeleton-title {
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeleton-text {
+  background: #282828;
+  height: 20px;
+  border-radius: 4px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-title-text {
+  width: 60%;
+  height: 30px;
+}
+
+.skeleton-subtitle-text {
+  width: 40%;
+}
+
+.skeleton-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.skeleton-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 6px;
+  background: #282828;
+}
+
+.skeleton-movie-slider {
+  margin-top: 20px;
+  width: 100%;
+  padding-left: 3%;
+}
+
+.skeleton-slider-title {
+  width: 30%;
+  height: 20px;
+  background: #282828;
+  margin-bottom: 10px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-scroller {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.skeleton-card {
+  min-width: 156px;
+  height: 225px;
+  border-radius: 8px;
+  background: #141414;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-card-image {
+  width: 100%;
+  height: 75%;
+  border-radius: 8px;
+  background: #282828;
+}
+
+.skeleton-card-text {
+  width: 80%;
+  height: 10%;
+  background: #282828;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+body {
+  background: black;
+}
+
+.skeleton-banner {
+  position: relative;
+  width: 100%;
+  height: 90.3vh;
+  background: #141414;
+  animation: shimmer 1.5s infinite linear;
+  background: linear-gradient(90deg, #141414 25%, #282828 50%, #141414 75%);
+  background-size: 400px 100%;
+}
+
+.skeleton-iframe {
+  width: 100%;
+  height: 90.3vh;
+  position: absolute;
+  background: #141414;
+}
+
+.skeleton-title {
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeleton-text {
+  background: #282828;
+  height: 20px;
+  border-radius: 4px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-title-text {
+  width: 60%;
+  height: 30px;
+}
+
+.skeleton-subtitle-text {
+  width: 40%;
+}
+
+.skeleton-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.skeleton-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 6px;
+  background: #282828;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-movie-slider {
+  width: 100%;
+  margin-bottom: 50px;
+  padding-left: 3%;
+}
+
+.skeleton-slider-title {
+  width: 30%;
+  height: 20px;
+  background: #282828;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-scroller {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-left: 3%;
+  scroll-behavior: smooth;
+}
+
+.skeleton-scroller::-webkit-scrollbar {
+  height: 0;
+}
+
+.skeleton-card {
+  min-width: 156px;
+  height: 225px;
+  border-radius: 8px;
+  background: #141414;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: shimmer 1.5s infinite linear;
+  background: linear-gradient(90deg, #141414 25%, #282828 50%, #141414 75%);
+  background-size: 400px 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skeleton-card:hover {
+  transform: scale(1.05);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.skeleton-card-image {
+  width: 100%;
+  height: 75%;
+  border-radius: 8px;
+  background: #282828;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-card-text {
+  width: 80%;
+  height: 10%;
+  background: #282828;
+  border-radius: 4px;
+  animation: shimmer 1.5s infinite linear;
+}

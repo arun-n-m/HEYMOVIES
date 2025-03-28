@@ -1,0 +1,15 @@
+<header>
+  <h2 class="logo" [routerLink]="['/']"><span style="color: #ff0000">Hey</span>Movies</h2>
+  <div class="bx bx-menu" id="menu-icon"></div>
+  <nav class="navbar">
+    <a href="/">Home</a>
+    <a [routerLink]="['/vidoes']" [queryParams]="{ type:'movie' }">Movies</a>
+    <a [routerLink]="['/vidoes']" [queryParams]="{ type:'tv' }">TV Shows</a>
+    <!-- <a href="upcomming">Upcomming</a> -->
+  </nav>
+  <!-- <button [routerLink]="['/']">Sign out</button> -->
+</header>
+<section>
+  <router-outlet></router-outlet>
+</section>
+<app-footer></app-footer>

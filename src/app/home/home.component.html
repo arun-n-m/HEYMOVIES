@@ -1,0 +1,93 @@
+@defer(on immediate){
+<div class="main">
+    <div class="banner">
+        <img class="backdrop" [src]="Trending[0].backdrop_path | image" [alt]="Trending[0].name || Trending[0].title"
+            frameborder="0" allowfullscreen>
+        <div class="title">
+            <h1>{{Trending[0].original_title || Trending[0].title}}</h1>
+            <span>{{Trending[0].overview | description:300 }}</span>
+            <div class="banner-btn" (click)=" playTrailer()"><button>▶︎ Play</button><button
+                (click)="getMovie(Trending[0].media_type, Trending[0].id)">ⓘ More info</button></div>
+        </div>
+    </div>
+    <!-- trending -->
+    <div class="movie-slider">
+        <h2>Trending</h2>
+        <div class="hr-line"></div>
+        <div class="scroller">
+            @for (new of Trending; track new;) {
+            <div class="card" (click)="getMovie(new.media_type, new.id)">
+                <div class="image">
+                    <img [src]="new.poster_path | image" [alt]="new.name || new.title">
+                </div>
+                <div class="movie-title">
+                    <p>{{ new.name || new.title }}</p>
+                    <span>{{new.release_date || new.first_air_date}}</span>
+                </div>
+            </div>
+            }
+
+        </div>
+    </div>
+
+    <!-- Upcomming -->
+    <div class="movie-slider">
+        <h2>Upcomming</h2>
+        <div class="hr-line"></div>
+        <div class="scroller">
+            @for (data of upcomming; track new;) {
+            <div class="card" (click)="getMovie('movie',data.id)">
+                <div class="image">
+                    <img [src]="data.poster_path | image" [alt]="data.name || data.title" />
+                </div>
+                <div class="movie-title">
+                    <p>{{ data.name || data.title }}</p>
+                    <span>{{ data.release_date || data.first_air_date}}</span>
+                </div>
+            </div>
+            }
+
+        </div>
+    </div>
+    <!--TV Shows -->
+    <div class="movie-slider">
+        <h2>TV Shows</h2>
+        <div class="hr-line"></div>
+        <div class="scroller">
+            @for (show of tvShows; track show;) {
+            <div class="card" (click)="getMovie(show.media_type, show.id)">
+                <div class="image">
+                    <img [src]="show.poster_path | image" [alt]="show.name || show.title" />
+                </div>
+                <div class="movie-title">
+                    <p>{{ show.name || show.title }}</p>
+                    <span>{{ show.release_date || show.first_air_date }}</span>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+    <!-- Movies -->
+    <div class="movie-slider">
+        <h2>Movies</h2>
+        <div class="hr-line"></div>
+        <div class="scroller">
+            @for (movie of movies; track movie;) {
+            <div class="card" (click)="getMovie('movie', movie.id)">
+                <div class="image">
+                    <!-- <img [src]="imageurl + movie.poster_path" [alt]="movie.name || movie.title" /> -->
+                    <img [src]="movie.poster_path | image" [alt]="movie.name || movie.title" />
+                </div>
+                <div class="movie-title">
+                    <p>{{ movie.name || movie.title }}</p>
+                    <span>{{ movie.release_date || movie.first_air_date }}</span>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+}
+@loading(minimum 250ms){
+<app-loader></app-loader>
+}

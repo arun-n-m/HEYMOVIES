@@ -1,0 +1,69 @@
+header {
+    top:0;
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 100px;
+    /* background:#141414; */
+    background:transparent;
+}
+
+.logo {
+    font-weight: 600;
+    color: var(--bg-color);
+    cursor:default;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    font-family:"Poppins",sans-serif;
+}
+
+#menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+header .navbar a {
+    font-weight: 500;
+    margin: 0 20px;
+    color: var(--bg-color);
+    position: relative;
+}
+
+header .navbar a::after {
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: var(--main-color);
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    transition: 0.5s all linear;
+
+}
+
+header .navbar a:hover::after {
+    width: 100%;
+}
+
+header button {
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: .7rem 1.4rem;
+    font-weight: 500;
+    border-radius: .5rem;
+    height: 40px;
+    overflow: hidden;
+    background-color: var(--main-color);
+    color: var(--bg-color)
+}
+
+header button:hover {
+    background-color: #fa1216;
+}

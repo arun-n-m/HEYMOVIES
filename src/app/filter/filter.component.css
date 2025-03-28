@@ -1,0 +1,73 @@
+section {
+    color: #fff;
+    padding: 5%;
+    width: 100%;
+    background-color: #000;
+    border-radius: 10px;
+}
+
+.hr-line {
+    width: 100%;
+    height: 1px;
+    background-color: #333;
+    margin: 25px auto;
+}
+
+h3 {
+    font-weight: 400;
+    color: #fff;
+}
+
+h4 {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+li {
+    display: inline-flex;
+    border-radius: 14px;
+    padding: 4px 12px;
+    font-size: 15px;
+    margin-right: 6px;
+    margin-top: 8px;
+    text-transform: capitalize;
+    background-color: transparent;
+    border: 1px solid #333;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8),
+        -2px -2px 5px rgba(255, 255, 255, 0.05);
+}
+
+li:hover {
+    background-color: var(--font-color);
+    color: var(--text-color);
+}
+
+li.active{
+    background-color: var(--font-color);
+    color: var(--text-color);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.9),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.03);
+}
+
+input {
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 4px 12px;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #111;
+    color: #fff;
+}
+
+input::placeholder {
+    text-transform: capitalize;
+    color: #666;
+}

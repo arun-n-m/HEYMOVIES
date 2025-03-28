@@ -1,0 +1,23 @@
+<section>
+    <div class="genres">
+        <h4>Genres</h4>
+           <ul>
+            @for(list of genres.genres;track list.name;){
+            <li (click)="filterGenres(list.id)" [class]="list.id===selected_genres?'active':''">{{list.name}}</li>
+            }
+           </ul>
+        
+    </div>
+    <div class="hr-line"></div>
+    <div class="language">
+        <h4>Language</h4>
+        <ul>
+            <!-- @for(language of new_languages; track language.iso_639_1){
+            <li (click)="passLanguage(language.iso_639_1)" [class]="language.code===selected_language?'active':''">{{language.english_name}}</li>
+            } -->
+            @for(language of languages; track language.code){
+                <li (click)="filterLanguage(language.code)" [class]="language.code===selected_language?'active':''">{{language.name}}</li>
+            }
+        </ul>
+    </div>
+</section>
