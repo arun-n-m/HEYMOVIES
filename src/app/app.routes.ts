@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { Error404Component } from './error404/error404.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserComponent } from './browser/browser.component';
@@ -19,6 +18,4 @@ export const routes: Routes = [
             {path:"player/:id",component:PlayerComponent}
         ],
     },
-    
-    { path: "**", component: Error404Component },
 ];
